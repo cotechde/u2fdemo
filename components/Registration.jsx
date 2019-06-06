@@ -87,9 +87,7 @@ export default class Registration extends React.Component {
         <div className="content">
           <h2>Registration</h2>
           <ol>
-            <li>Insert your U2F key</li>
             <li>Click 'Register'</li>
-            <li>Press the button on your U2F key</li>
           </ol>
           <form>
             <div className="form-group">

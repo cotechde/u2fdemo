@@ -90,7 +90,6 @@ export default class Signing extends React.Component {
           <li>Enter a "KeyHandle" or, if you don't have one, go back to "Registration" and generate one</li>
           <li>Insert your U2F key</li>
           <li>Click 'Sign'</li>
-          <li>Press the button on your U2F key</li>
         </ol>
         <form>
           <div className="form-group">

@@ -179,25 +179,38 @@ export default class App extends React.Component {
         />
       )
     } else {
-      return <About />
+      return(
+        <Registration
+          {...this.state.registration}
+          timeout={this.state.timeout}
+          onUpdate={this.updateRegState}
+          onRegister={this.onRegister}
+        />
+      )
     }
   }
 
   render() {
     return (
       <div>
-        <h1>U2F Demo</h1>
-        <div className="btn-group" data-toggle="buttons">
-          <label className={"btn btn-secondary " + ('about' === this.state.route ? 'active' : '') }>
-            <input type="checkbox" name="about" onChange={this.onRouteChange} autoComplete="off"/> Readme
-          </label>
-          <label className={"btn btn-secondary " + ('reg' === this.state.route ? 'active' : '') }>
-            <input type="checkbox" name="reg" onChange={this.onRouteChange} autoComplete="off"/> Registration
-          </label>
-          <label className={"btn btn-secondary " + ('sig' === this.state.route ? 'active' : '') }>
-            <input type="checkbox" name="sig" onChange={this.onRouteChange} autoComplete="off"/> Signing
-          </label>
-        </div>
+        <nav className="navbar sticky-top navbar-expand navbar-light bg-light">
+          <a className="navbar-brand" href="https://hwsecurity.dev">
+            <img src="https://hwsecurity.dev/img/icon.svg" height="30" className="d-inline-block align-top" alt="" />
+            Hardware Security SDK - FIDO U2F
+          </a>
+        </nav>
+        <nav className="navbar sticky-top navbar-expand navbar-light bg-light">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav mr-auto">
+              <li className={"nav-item " + ('reg' === this.state.route ? 'active' : '') }>
+                <a className="nav-link" name="reg" href="#reg" >Registration</a>
+              </li>
+              <li className={"nav-item " + ('sig' === this.state.route ? 'active' : '') }>
+                <a className="nav-link" name="sig" href="#sig" >Signing</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
         {this.renderRoute()}
       </div>)
   }
