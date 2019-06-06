@@ -24,7 +24,7 @@ export default class App extends React.Component {
       timeout: 0,
       route: 'about', registration: {
         appId,
-        challenge: 'RegisterChallenge',
+        challenge: 'LoooooooongRegisterChallenge',
         response: null,
         parsedResponse: null,
       },
